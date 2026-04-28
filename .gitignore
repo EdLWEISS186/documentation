@@ -1,0 +1,8 @@
+node_modules
+.vitepress/dist
+.DS_Store
+.vitepress/cache
+docs/public/assets/fonts/Konkret*.ttf
+*Konkret*.ttf
+*Konkret*.woff
+*Konkret*.woff2

@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-background text-on-background font-body selection:bg-primary selection:text-white;
+}
+
+h1, h2, h3 {
+  @apply font-headline font-black uppercase tracking-tighter;
+}
+
+h4, h5, h6 {
+  @apply font-headline font-bold uppercase;
+}
+
+/* Custom design markers */
+.wireframe-line {
+  background: repeating-linear-gradient(90deg, #455f8b, #455f8b 1px, transparent 1px, transparent 20px);
+}
+
+.wireframe-y {
+  background: repeating-linear-gradient(0deg, #455f8b, #455f8b 1px, transparent 1px, transparent 20px);
+}
+
+.grid-overlay {
+  background-image: radial-gradient(circle, #455f8b 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.1;
+}
+
+@layer components {
+  /* Quantistic Button System */
+  .btn {
+    @apply inline-flex items-center justify-center px-8 py-3 font-headline text-sm font-bold uppercase tracking-widest transition-all duration-300 relative overflow-hidden;
+  }
+
+  /* Solid and Opaque Button Variants */
+  .btn-primary {
+    @apply bg-primary text-white border border-primary hover:bg-secondary hover:border-secondary shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white border border-secondary hover:bg-primary hover:border-primary shadow-lg;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-white;
+  }
+
+  /* Scramble button base styles as used in original site */
+  .dac-hack-btn {
+    @apply relative transition-all duration-300;
+  }
+}
+
+/* Scramble effect compatibility */
+.dac-hack-btn span {
+  display: inline-block;
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
