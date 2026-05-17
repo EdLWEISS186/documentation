@@ -1,55 +1,52 @@
 # Advanced CGNAT Dual-Node Setup
 
-Detailed guide for running DAC nodes behind CGNAT using Dual-Node Single Machine architecture.
-
-## Network Topology
-
-## Network Topology
+Detailed guide for running stable DAC nodes behind CGNAT using Dual-Node Single Machine architecture.
 
 ## Network Topology
 
 ```ascii
 Internet
    └── Router (CGNAT)
-         └── Single Machine
-               ├── Windows (Node 1)
-               └── WSL2 Ubuntu (Node 2)
+         └── Single Physical Machine
+               ├── Windows (Node 1 - Primary)
+               └── WSL2 (Ubuntu) (Node 2 - Secondary)
+Why This Setup Excels
 
-## Why This Setup Works Well
+Bypasses many CGNAT restrictions through internal peering
+Maximizes limited hardware resources
+Provides redundancy within a single machine
+Proven stable during Testnet Inception
 
-- Bypasses many CGNAT limitations
-- Allows internal peering between Node 1 and Node 2
-- Increases total resource usage
-- Improves overall stability and QE potential
+Key Configurations
+1. Static Peering
 
-## Configuration Steps
+Configure both nodes to connect to each other internally
+Add reliable external peers
+Optimize peer discovery
 
-### 1. Static Peering Setup
+2. Sync Strategy
 
-*(Silakan tambahkan detail dari repo kamu di sini nanti)*
+Use fast syncmode for faster initial synchronization
 
-### 2. Fast Syncmode Strategy
+3. Monitoring & Automation
 
-### 3. Auto-restart & Monitoring Scripts
+DAC Node Dashboard integration
+Auto-restart scripts (Windows + WSL)
+Log management and resource monitoring
 
-### 4. Dashboard Integration
+4. Resource Allocation
 
-## Common CGNAT Challenges & Solutions
+Proper CPU and RAM distribution between Windows and WSL2
+Avoid resource contention
 
-- Port forwarding limitations
-- Peer discovery issues
-- Connection drops
-- Solutions applied in this setup
+Maximizing Quantum Energy (QE)
 
-## Performance Tips
+Maintain uptime > 95%
+Ensure good peer quality
+Consistent block propagation
+Stable network connectivity
 
-- Resource allocation between Windows and WSL2
-- Best practices for maximizing QE
-- Monitoring important metrics
+References
 
-## Limitations
-
-- Single point of failure (one machine)
-- Power consumption
-- etc.
+DAC Dual Node CGNAT Setup Repository
 
