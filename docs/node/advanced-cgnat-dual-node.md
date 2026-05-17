@@ -2,6 +2,8 @@
 
 Detailed guide for running stable DAC nodes behind CGNAT using Dual-Node Single Machine architecture.
 
+---
+
 ## Network Topology
 
 ```ascii
@@ -9,44 +11,71 @@ Internet
    └── Router (CGNAT)
          └── Single Physical Machine
                ├── Windows (Node 1 - Primary)
-               └── WSL2 (Ubuntu) (Node 2 - Secondary)
-Why This Setup Excels
+               └── WSL2 Ubuntu (Node 2 - Secondary)
+```
 
-Bypasses many CGNAT restrictions through internal peering
-Maximizes limited hardware resources
-Provides redundancy within a single machine
-Proven stable during Testnet Inception
+---
 
-Key Configurations
-1. Static Peering
+## Why This Setup Excels
 
-Configure both nodes to connect to each other internally
-Add reliable external peers
-Optimize peer discovery
+- Bypasses many CGNAT restrictions through internal peering
+- Maximizes limited hardware resources
+- Provides redundancy within a single machine
+- Proven stable during Testnet Inception
 
-2. Sync Strategy
+---
 
-Use fast syncmode for faster initial synchronization
+## Key Configurations
 
-3. Monitoring & Automation
+### 1. Static Peering
 
-DAC Node Dashboard integration
-Auto-restart scripts (Windows + WSL)
-Log management and resource monitoring
+- Configure both nodes to connect internally
+- Add reliable external peers
 
-4. Resource Allocation
+### 2. Sync Strategy
 
-Proper CPU and RAM distribution between Windows and WSL2
-Avoid resource contention
+- Use fast syncmode for faster synchronization
 
-Maximizing Quantum Energy (QE)
+### 3. Monitoring & Automation
 
-Maintain uptime > 95%
-Ensure good peer quality
-Consistent block propagation
-Stable network connectivity
+- DAC Node Dashboard integration
+- Auto-restart scripts (Windows + WSL)
 
-References
+---
 
-DAC Dual Node CGNAT Setup Repository
+## Troubleshooting
 
+| Issue | Possible Cause | Solution |
+|---|---|---|
+| Poor peering / Low peers | CGNAT restriction | Use static peering + internal node connection |
+| Frequent disconnects | Resource contention / WSL issues | Limit CPU/RAM usage and use auto-restart scripts |
+| Slow sync | Storage speed / Network | Use NVMe SSD + fast syncmode |
+| High CPU usage | Both nodes running simultaneously | Adjust CPU allocation between Windows & WSL2 |
+| Dashboard not showing data | Port / API issue | Check firewall and correct endpoint |
+
+---
+
+## Best Practices
+
+- Maintain uptime above 95%
+- Monitor CPU, RAM, and Disk I/O regularly
+- Implement auto-restart mechanisms on both OS
+- Use internal IP peering between Node 1 and Node 2
+- Keep both nodes on fast syncmode
+- Regularly update node software
+- Backup important configuration files
+
+---
+
+## Maximizing Quantum Energy (QE)
+
+- Consistent uptime
+- Good peer quality and block propagation speed
+- Stable network connectivity
+- Proper resource allocation
+
+---
+
+## References
+
+- DAC Dual Node CGNAT Setup Repository
