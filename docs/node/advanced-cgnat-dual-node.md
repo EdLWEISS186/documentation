@@ -1,41 +1,82 @@
-# Advanced CGNAT Dual-Node Setup for Testnet Inception
+# Advanced CGNAT Dual-Node Setup
 
-Detailed technical guide for participants seeking to maximize their contribution and **Quantum Energy (QE)** during DAC Testnet Inception while operating behind CGNAT.
+Detailed guide for running stable DAC nodes behind CGNAT using Dual-Node Single Machine architecture.
+
+---
 
 ## Network Topology
 
-```ascii
-Internet
-   └── Router (CGNAT)
-         └── Single Physical Machine
-               ├── Windows (Node 1 - Primary)
-               └── WSL2 (Ubuntu) (Node 2 - Secondary)
-Why This Setup is Effective
-The Dual-Node Single Machine configuration enables efficient resource utilization and internal peering, allowing participants to deliver stronger contributions to the Testnet network while overcoming common CGNAT limitations. This setup has shown strong performance in accumulating Quantum Energy (QE) during the Testnet Inception campaign.
-Key Configurations
+    Internet
+       └── Router (CGNAT)
+             └── Single Physical Machine
+                   ├── Windows (Node 1 - Primary)
+                   └── WSL2 Ubuntu (Node 2 - Secondary)
 
-Static peering (internal + external)
-Fast syncmode strategy
-Auto-restart automation
-Resource optimization between host and WSL2
+---
 
-Troubleshooting
-Issue,Possible Cause,Solution
-Low peer count,CGNAT restrictions,Implement static peering + internal node connection
-Frequent disconnects,Resource contention,Optimize CPU/RAM allocation and use auto-restart
-Slow synchronization,Storage / bandwidth,Use NVMe SSD with fast syncmode
-High resource usage,Dual nodes competing,Fine-tune allocation between Windows and WSL2
-Best Practices for QE Maximization
+## Why This Setup Excels
 
-Maintain consistent uptime above 95%
-Monitor system resources continuously
-Implement reliable auto-restart mechanisms
-Use internal IP for peering between the two nodes
-Keep both nodes updated with the latest Testnet version
-Regularly review logs and dashboard metrics
+- Bypasses many CGNAT restrictions through internal peering
+- Maximizes limited hardware resources
+- Provides redundancy within a single machine
+- Proven stable during Testnet Inception
 
-Active and stable node operation is a valuable form of ecosystem contribution during Testnet Inception. High-quality participation helps strengthen network decentralization and overall Testnet performance.
-References
+---
 
-DAC Dual Node CGNAT Setup Repository
+## Key Configurations
+
+### 1. Static Peering
+
+- Configure both nodes to connect internally
+- Add reliable external peers
+
+### 2. Sync Strategy
+
+- Use `fast` syncmode for faster initial synchronization
+
+### 3. Monitoring & Automation
+
+- DAC Node Dashboard integration
+- Auto-restart scripts (Windows + WSL)
+
+---
+
+## Troubleshooting
+
+### Common Issues & Solutions
+
+| Issue | Possible Cause | Solution |
+|---|---|---|
+| Poor peering / Low peers | CGNAT restriction | Use static peering + internal node connection |
+| Frequent disconnects | Resource contention / WSL issues | Limit CPU/RAM usage, use auto-restart scripts |
+| Slow sync | Storage speed / Network | Use NVMe SSD + `fast` syncmode |
+| High CPU usage | Both nodes running simultaneously | Adjust CPU allocation between Windows & WSL2 |
+| Dashboard not showing data | Port / API issue | Check firewall and correct endpoint |
+
+---
+
+## Best Practices
+
+- Maintain uptime above 95%
+- Monitor resource usage regularly (CPU, RAM, Disk I/O)
+- Implement auto-restart mechanism on both OS
+- Use internal IP for peering between Node 1 and Node 2
+- Keep both nodes on `fast` syncmode
+- Regularly update node software
+- Backup important configuration files
+
+---
+
+## Maximizing Quantum Energy (QE)
+
+- Consistent uptime
+- Good peer quality and block propagation speed
+- Stable network connectivity
+- Proper resource allocation
+
+---
+
+## References
+
+- DAC Dual Node CGNAT Setup Repository
 
