@@ -1,52 +1,40 @@
-# Running a Node
+# Running a Node on Testnet Inception
 
-Guide for running DAC Quantum Chain nodes on Testnet Inception.
+Guide for active participation in DAC Quantum Chain Testnet Inception through node operation.
 
 ## Overview
 
-This guide covers recommended setups for DAC node operators, with a focus on the **Dual-Node Single Machine** configuration. This setup is particularly effective for users operating behind CGNAT or with limited hardware resources.
+This guide provides comprehensive instructions for running DAC nodes during the **Testnet Inception** campaign. The Dual-Node Single Machine setup (Windows + WSL2) has proven to be an effective configuration for maximizing resource utilization and **Quantum Energy (QE)** accumulation, particularly for participants operating behind CGNAT.
+
+Active node operation is one of the key ways to contribute to network stability and decentralization during the Testnet phase.
 
 ## Hardware Requirements
 
-**Minimum**
+**Minimum Specifications**
 - CPU: 4 cores
 - RAM: 8 GB
 - Storage: 500 GB NVMe SSD
-- Internet: 50 Mbps (symmetric)
+- Internet: 50 Mbps symmetric
 
-**Recommended**
+**Recommended Specifications**
 - CPU: 8+ cores
 - RAM: 16–32 GB
-- Storage: 1 TB NVMe SSD
+- Storage: 1 TB+ NVMe SSD
+- Internet: 100 Mbps+ symmetric
 
-## Recommended Configuration
+## Recommended Setup for Testnet Inception
 
 ### Dual-Node Single Machine (Windows + WSL2)
 
-This is currently one of the most stable and efficient setups for maximizing participation and Quantum Energy.
-
-**Architecture:**
-- One node running on **Windows** (primary / anchor)
-- Second node running on **WSL2 (Ubuntu)** (secondary)
+This architecture allows participants to run two nodes simultaneously on a single machine, significantly improving **Quantum Energy** potential through better uptime, internal peering, and resource efficiency.
 
 **Benefits:**
-- Better resource utilization
-- Internal peering between nodes
-- Improved redundancy
-- Higher stability under CGNAT
+- Enhanced network contribution
+- Higher QE accumulation
+- Improved stability and redundancy
+- Optimized performance in constrained network environments (CGNAT)
 
-## Key Features Covered
+## Advanced Configuration
 
-- CGNAT Workaround using Static Peering
-- Network topology and configuration
-- Fast syncmode strategy
-- Monitoring & auto-restart scripts
-- Dashboard integration
-
-## Next Sections
-
-- [Advanced CGNAT & Dual Node Setup](./advanced-cgnat-dual-node.md)
-- Installation Steps
-- Troubleshooting
-- Maximizing Quantum Energy
+- [Advanced CGNAT Dual-Node Setup](./advanced-cgnat-dual-node.md)
 
